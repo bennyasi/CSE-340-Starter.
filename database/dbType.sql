@@ -4,7 +4,7 @@ CREATE TYPE public.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
 
 ALTER TYPE public.account_type
-     OWNER TO cse_340_db_ez5p_user
+	OWNER TO cse_340_db_h4vg_user;
 
 --CREATE classification table
 CREATE TABLE public.classification (

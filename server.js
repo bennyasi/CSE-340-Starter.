@@ -5,7 +5,7 @@ const app = express();
 
 // View engine
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "view"));
+app.set("views", path.join(__dirname, "views")); // ✅ correct folder
 
 // Static files
 app.use(express.static(path.join(__dirname, "public")));
@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
   res.render("index", { title: "CSE Motors" });
 });
 
-// Server
-const port = 5500;
-app.listen(port, () => {
-  console.log(`App listening on http://localhost:${port}`);
+// Server (Render-safe)
+const PORT = process.env.PORT || 5500;
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
 });
